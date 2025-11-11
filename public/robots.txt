@@ -1,0 +1,6 @@
+# Permitir acceso a todos los bots
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://wingsbarberstudio.cl/sitemap.xml
