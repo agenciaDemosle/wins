@@ -25,6 +25,7 @@ const services = [
     description:
       'Corte de cabello con asesoría personalizada y un acabado limpio y elegante. Nuestro equipo analiza tu estilo, tipo de cabello y preferencias para entregarte un resultado impecable que refleje tu personalidad.',
     image: corteImg,
+    price: '$12.990',
   },
   {
     numberIcon: num2,
@@ -32,6 +33,7 @@ const services = [
     description:
       'Barba impecable, contornos definidos y un toque de estilo incomparable. Desde un perfilado básico hasta un arreglo completo con diseño personalizado, cuidamos cada detalle para resaltar tu mejor versión.',
     image: perfiladoImg,
+    price: '$11.990',
   },
   {
     numberIcon: num3,
@@ -39,6 +41,7 @@ const services = [
     description:
       'Revive tu piel con una limpieza facial profunda y sensación de frescura total. Utilizamos productos profesionales que eliminan impurezas, hidratan y revitalizan tu rostro, dejándote con una piel sana y radiante.',
     image: limpiezaImg,
+    price: '$11.990',
   },
   {
     numberIcon: num4,
@@ -46,6 +49,7 @@ const services = [
     description:
       'Tratamiento capilar que hidrata, fortalece y estimula el crecimiento natural. Ideal para cabello maltratado, seco o con pérdida de vitalidad. Recupera la salud de tu cabello con ingredientes de alta calidad.',
     image: revitalizacionImg,
+    price: '$11.990',
   },
   {
     numberIcon: num5,
@@ -53,6 +57,7 @@ const services = [
     description:
       'Da volumen, forma y estilo con nuestros rizos permanentes personalizados. Asesoramos sobre el tipo de rizo ideal para tu estilo y estructura capilar, logrando un look natural y con movimiento.',
     image: rizosImg,
+    price: '$64.990',
   },
   {
     numberIcon: num5,
@@ -60,6 +65,7 @@ const services = [
     description:
       'Transforma tu look con tinturas y visos personalizados. Desde tonos naturales y discretos hasta colores vibrantes y atrevidos, nuestro equipo experto te asesora para lograr el color perfecto que realce tu estilo y personalidad.',
     image: visosImg,
+    price: '$64.990',
   },
 ];
 
@@ -82,20 +88,11 @@ export const Servicios = () => {
       />
 
       <Section background="black" backgroundImage={fondoImg}>
-        {/* Scroll horizontal para todos los dispositivos */}
-        <div className="overflow-x-auto pb-4 -mx-4 px-4 md:-mx-6 md:px-6 lg:-mx-8 lg:px-8 scrollbar-hide">
-          <div className="flex gap-6" style={{ width: 'max-content' }}>
-            {services.map((service, index) => (
-              <div key={service.title} className="w-[280px] md:w-[320px] lg:w-[360px] flex-shrink-0">
-                <ServiceCard {...service} index={index} />
-              </div>
-            ))}
-          </div>
-        </div>
-
-        {/* Indicador de scroll */}
-        <div className="text-center mt-8 text-white/60 text-sm">
-          ← Desliza para ver más servicios →
+        {/* Grilla de servicios */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-7xl mx-auto">
+          {services.map((service, index) => (
+            <ServiceCard key={service.title} {...service} index={index} />
+          ))}
         </div>
       </Section>
 

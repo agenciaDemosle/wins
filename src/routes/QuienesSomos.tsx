@@ -3,7 +3,8 @@ import { Section } from '@/components/Section';
 import { Seo } from '@/components/Seo';
 import { getSEOData } from '@/lib/seo';
 import { motion } from 'framer-motion';
-import { Scissors, Users, Sparkles, MapPin, Coffee, Gamepad2, Target, Eye, Award, Heart, TrendingUp } from 'lucide-react';
+import { Scissors, Users, Sparkles, MapPin, Coffee, Gamepad2, Target, Eye, Award, Heart, TrendingUp, ExternalLink } from 'lucide-react';
+import { Link } from 'react-router-dom';
 import fondoblanco1 from '@/assets/fondoblanco1.jpg';
 import fondoblanco2 from '@/assets/fondoblanco2.jpg';
 import fondoblanco3 from '@/assets/fondoblanco3.jpg';
@@ -11,6 +12,7 @@ import portada2Bg from '@/assets/portada2.webp';
 import alanImg from '@/assets/alan.jpg';
 import felipeImg from '@/assets/felipe.jpg';
 import agustinImg from '@/assets/agustin.jpg';
+import vicenteImg from '/images/vicente.jpeg';
 import gratisImg from '@/assets/gratis.jpeg';
 
 export const QuienesSomos = () => {
@@ -133,25 +135,35 @@ export const QuienesSomos = () => {
             </p>
           </motion.div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {[
               {
                 name: 'Alan Vargas',
                 role: 'Fundador & Barber Master',
                 description: 'Lidera con su visión de excelencia y atención personalizada.',
-                image: alanImg
+                image: alanImg,
+                agendaLink: 'https://wingsbarberstudio.site.agendapro.com/cl/sucursal/366908/profesional/414048'
               },
               {
                 name: 'Felipe Aguilar',
                 role: 'Especialista en Color',
                 description: 'Creatividad y precisión en técnicas modernas.',
-                image: felipeImg
+                image: felipeImg,
+                agendaLink: 'https://wingsbarberstudio.site.agendapro.com/cl/sucursal/366908/profesional/705062'
               },
               {
                 name: 'Agustín Moreira',
                 role: 'Barber & Stylist',
                 description: 'Talento para cortes de tendencia y estilo único.',
-                image: agustinImg
+                image: agustinImg,
+                agendaLink: 'https://wingsbarberstudio.site.agendapro.com/cl/sucursal/366908/profesional/705075'
+              },
+              {
+                name: 'Vicente',
+                role: 'Barber & Stylist',
+                description: 'Estilo con identidad y precisión en cada trazo.',
+                image: vicenteImg,
+                agendaLink: 'https://wingsbarberstudio.site.agendapro.com/cl/sucursal/366908/profesional/705216'
               }
             ].map((member, index) => (
               <motion.div
@@ -172,7 +184,16 @@ export const QuienesSomos = () => {
                 <h3 className="font-heading text-xl md:text-2xl text-white mb-2 group-hover:text-neon transition-colors">
                   {member.name}
                 </h3>
-                <p className="font-body text-sm md:text-base text-neon">{member.role}</p>
+                <p className="font-body text-sm md:text-base text-neon mb-4">{member.role}</p>
+                <a
+                  href={member.agendaLink}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 bg-neon/10 border border-neon text-neon font-body text-sm font-semibold px-4 py-2 rounded-lg hover:bg-neon hover:text-black transition-all duration-300"
+                >
+                  Agendar Hora
+                  <ExternalLink size={16} />
+                </a>
               </motion.div>
             ))}
           </div>
@@ -349,7 +370,7 @@ export const QuienesSomos = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: index * 0.15 }}
-                className="bg-neutral-dark/50 backdrop-blur-sm border border-neon/20 p-8 rounded-lg hover:border-neon/50 transition-all group"
+                className="bg-black/90 backdrop-blur-sm border-2 border-neon/40 p-8 rounded-lg hover:border-neon transition-all group"
               >
                 <div className="text-neon mb-6 flex justify-center group-hover:scale-110 transition-transform">
                   {value.icon}
@@ -382,9 +403,16 @@ export const QuienesSomos = () => {
               <p className="font-body text-base md:text-lg text-white leading-relaxed mb-6">
                 Creemos en el poder de la comunidad. Colaboramos con eventos locales, auspicios y actividades que conectan a Puerto Varas con el estilo, la cultura y el cuidado personal.
               </p>
-              <p className="font-script text-2xl md:text-3xl text-neon">
+              <p className="font-script text-2xl md:text-3xl text-neon mb-8">
                 Wings es más que una barbería: es un punto de encuentro donde el estilo y la confianza se elevan juntos.
               </p>
+              <Link
+                to="/alianzas"
+                className="inline-flex items-center gap-2 bg-neon/20 border-2 border-neon text-neon font-body font-semibold px-8 py-3 rounded-lg hover:bg-neon hover:text-white transition-all duration-300 shadow-lg hover:shadow-neon"
+              >
+                Ver nuestras Alianzas
+                <ExternalLink size={20} />
+              </Link>
             </div>
           </motion.div>
         </div>

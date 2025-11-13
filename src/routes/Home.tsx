@@ -8,9 +8,17 @@ import { motion } from 'framer-motion';
 import { Coffee, Gamepad2, Sparkles, Scissors, MapPin, Phone, MessageCircle, Clock, Feather, Star, Quote } from 'lucide-react';
 import alanImg from '@/assets/alan.jpg';
 
+// Componente de ícono Instagram personalizado
+const InstagramIcon = ({ size = 18 }: { size?: number }) => (
+  <svg width={size} height={size} viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M12 2C14.717 2 15.056 2.01 16.122 2.06C17.187 2.11 17.912 2.277 18.55 2.525C19.21 2.779 19.766 3.123 20.322 3.678C20.8305 4.1779 21.224 4.78259 21.475 5.45C21.722 6.087 21.89 6.813 21.94 7.878C21.987 8.944 22 9.283 22 12C22 14.717 21.99 15.056 21.94 16.122C21.89 17.187 21.722 17.912 21.475 18.55C21.2247 19.2178 20.8311 19.8226 20.322 20.322C19.822 20.8303 19.2173 21.2238 18.55 21.475C17.913 21.722 17.187 21.89 16.122 21.94C15.056 21.987 14.717 22 12 22C9.283 22 8.944 21.99 7.878 21.94C6.813 21.89 6.088 21.722 5.45 21.475C4.78233 21.2245 4.17753 20.8309 3.678 20.322C3.16941 19.8222 2.77593 19.2175 2.525 18.55C2.277 17.913 2.11 17.187 2.06 16.122C2.013 15.056 2 14.717 2 12C2 9.283 2.01 8.944 2.06 7.878C2.11 6.812 2.277 6.088 2.525 5.45C2.77524 4.78218 3.1688 4.17732 3.678 3.678C4.17767 3.16923 4.78243 2.77573 5.45 2.525C6.088 2.277 6.812 2.11 7.878 2.06C8.944 2.013 9.283 2 12 2ZM12 7C10.6739 7 9.40215 7.52678 8.46447 8.46447C7.52678 9.40215 7 10.6739 7 12C7 13.3261 7.52678 14.5979 8.46447 15.5355C9.40215 16.4732 10.6739 17 12 17C13.3261 17 14.5979 16.4732 15.5355 15.5355C16.4732 14.5979 17 13.3261 17 12C17 10.6739 16.4732 9.40215 15.5355 8.46447C14.5979 7.52678 13.3261 7 12 7ZM18.5 6.75C18.5 6.41848 18.3683 6.10054 18.1339 5.86612C17.8995 5.6317 17.5815 5.5 17.25 5.5C16.9185 5.5 16.6005 5.6317 16.3661 5.86612C16.1317 6.10054 16 6.41848 16 6.75C16 7.08152 16.1317 7.39946 16.3661 7.63388C16.6005 7.8683 16.9185 8 17.25 8C17.5815 8 17.8995 7.8683 18.1339 7.63388C18.3683 7.39946 18.5 7.08152 18.5 6.75ZM12 9C12.7956 9 13.5587 9.31607 14.1213 9.87868C14.6839 10.4413 15 11.2044 15 12C15 12.7956 14.6839 13.5587 14.1213 14.1213C13.5587 14.6839 12.7956 15 12 15C11.2044 15 10.4413 14.6839 9.87868 14.1213C9.31607 13.5587 9 12.7956 9 12C9 11.2044 9.31607 10.4413 9.87868 9.87868C10.4413 9.31607 11.2044 9 12 9Z" fill="currentColor"/>
+  </svg>
+);
+
 const AGENDAPRO_URL = 'https://wingsbarberstudio.site.agendapro.com/cl/sucursal/366908';
 import felipeImg from '@/assets/felipe.jpg';
 import agustinImg from '@/assets/agustin.jpg';
+import vicenteImg from '/images/vicente.jpeg';
 import fondo1 from '@/assets/fondo.jpg';
 import fondo2 from '@/assets/fondo2.jpg';
 import fondo3 from '@/assets/fondo3.jpg';
@@ -23,7 +31,7 @@ import num2 from '@/assets/2.png';
 import num3 from '@/assets/3.png';
 import num4 from '@/assets/4.png';
 import num5 from '@/assets/5.png';
-import portadaBg from '@/assets/portada.webp';
+import portadaBg from '/images/hero1.jpeg';
 import somoswingsBg from '@/assets/somoswings2.jpg';
 import corteImg from '@/assets/corte.jpg';
 import perfiladoImg from '@/assets/perfilado.jpg';
@@ -39,48 +47,55 @@ const services = [
     title: 'Corte de Cabello',
     description: 'Corte de cabello con asesoría personalizada y un acabado limpio y elegante.',
     image: corteImg,
+    price: '$12.990',
   },
   {
     numberIcon: num2,
     title: 'Perfilado & Arreglo de Barba',
     description: 'Barba impecable, contornos definidos y un toque de estilo incomparable.',
     image: perfiladoImg,
+    price: '$11.990',
   },
   {
     numberIcon: num3,
     title: 'Limpieza Facial Premium',
     description: 'Revive tu piel con una limpieza facial profunda y sensación de frescura total.',
     image: limpiezaImg,
+    price: '$11.990',
   },
   {
     numberIcon: num4,
     title: 'Revitalización Capilar Premium',
     description: 'Tratamiento capilar que hidrata, fortalece y estimula el crecimiento natural.',
     image: revitalizacionImg,
+    price: '$11.990',
   },
   {
     numberIcon: num5,
     title: 'Rizos Permanentes',
     description: 'Da volumen, forma y estilo con nuestros rizos permanentes personalizados.',
     image: rizosImg,
+    price: '$64.990',
   },
   {
     numberIcon: num5,
     title: 'Tinturas y Visos',
     description: 'Transforma tu look con tinturas y visos personalizados, desde tonos naturales hasta colores vibrantes.',
     image: visosImg,
+    price: '$64.990',
   },
 ];
 
 const team = [
-  { name: 'Alan Vargas', role: 'Fundador & Barber Master', image: alanImg },
-  { name: 'Felipe Aguilar', role: 'Barber & Colorista', image: felipeImg },
-  { name: 'Agustín Moreira', role: 'Barber & Stylist', image: agustinImg },
+  { name: 'Alan Vargas', role: 'Fundador & Barber Master', image: alanImg, agendaUrl: 'https://wingsbarberstudio.site.agendapro.com/cl/sucursal/366908/profesional/414048', instagram: 'https://www.instagram.com/wingsbarber?igsh=YnUzdXFqNW93aHVq' },
+  { name: 'Felipe Aguilar', role: 'Barber & Colorista', image: felipeImg, agendaUrl: 'https://wingsbarberstudio.site.agendapro.com/cl/sucursal/366908/profesional/705062', instagram: 'https://www.instagram.com/felipe.baarber?igsh=c2liOW5zbjUyeGph' },
+  { name: 'Agustín Moreira', role: 'Barber & Stylist', image: agustinImg, agendaUrl: 'https://wingsbarberstudio.site.agendapro.com/cl/sucursal/366908/profesional/705075', instagram: 'https://www.instagram.com/moreira.bvrber?igsh=dW93OTNjYmtpYjB4' },
+  { name: 'Vicente', role: 'Barber & Stylist', image: vicenteImg, agendaUrl: 'https://wingsbarberstudio.site.agendapro.com/cl/sucursal/366908/profesional/705216', instagram: 'https://www.instagram.com/vvs_bvrber?igsh=MXN6OTZ5M3Qyd2Rneg==' },
 ];
 
 const stats = [
-  { value: '778', label: 'Clientes' },
-  { value: '1540', label: 'Servicios Realizados' },
+  { value: '917', label: 'Clientes' },
+  { value: '1852', label: 'Servicios Realizados' },
 ];
 
 const reviews = [
@@ -200,7 +215,7 @@ export const Home = () => {
                 <img
                   src={somoswingsBg}
                   alt="Wings Barber Studio Team"
-                  className="w-full h-full object-cover"
+                  className="w-full h-[400px] md:h-[500px] object-cover object-center"
                 />
               </div>
             </motion.div>
@@ -243,20 +258,11 @@ export const Home = () => {
           </p>
         </div>
 
-        {/* Scroll horizontal para todos los dispositivos */}
-        <div className="overflow-x-auto pb-4 -mx-4 px-4 md:-mx-6 md:px-6 lg:-mx-8 lg:px-8 scrollbar-hide">
-          <div className="flex gap-6" style={{ width: 'max-content' }}>
-            {services.map((service, index) => (
-              <div key={service.title} className="w-[280px] md:w-[320px] lg:w-[360px] flex-shrink-0">
-                <ServiceCard {...service} index={index} />
-              </div>
-            ))}
-          </div>
-        </div>
-
-        {/* Indicador de scroll */}
-        <div className="text-center mt-8 text-white/60 text-sm">
-          ← Desliza para ver más servicios →
+        {/* Grilla de servicios */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-7xl mx-auto">
+          {services.map((service, index) => (
+            <ServiceCard key={service.title} {...service} index={index} />
+          ))}
         </div>
 
         <div className="mt-12 text-center">
@@ -346,7 +352,7 @@ export const Home = () => {
             </p>
           </motion.div>
         </div>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-6xl mx-auto">
           {team.map((member, index) => (
             <motion.div
               key={member.name}
@@ -360,13 +366,30 @@ export const Home = () => {
                 <img
                   src={member.image}
                   alt={member.name}
-                  className="w-full h-72 md:h-80 object-cover object-center group-hover:scale-105 transition-transform duration-300"
+                  className="w-full h-72 md:h-80 object-cover object-top group-hover:scale-105 transition-transform duration-300"
                 />
               </div>
               <h3 className="font-heading text-xl md:text-2xl text-white mb-2 group-hover:text-neon transition-colors">
                 {member.name}
               </h3>
-              <p className="font-body text-sm md:text-base text-neon">{member.role}</p>
+              <p className="font-body text-sm md:text-base text-neon mb-4">{member.role}</p>
+              <a
+                href={member.agendaUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-block bg-neon/20 border-2 border-neon text-neon font-body font-semibold text-sm px-6 py-2 rounded-lg hover:bg-neon hover:text-white transition-all duration-300 mb-3"
+              >
+                Agendar con {member.name.split(' ')[0]}
+              </a>
+              <a
+                href={member.instagram}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center justify-center gap-2 text-white/70 hover:text-neon transition-colors text-sm"
+              >
+                <InstagramIcon size={18} />
+                <span>@{member.instagram.split('.com/')[1].split('?')[0]}</span>
+              </a>
             </motion.div>
           ))}
         </div>
@@ -419,6 +442,16 @@ export const Home = () => {
             <h2 className="font-heading text-3xl md:text-4xl lg:text-5xl text-white mb-4">
               Lo que dicen nuestros <span className="font-script text-neon text-4xl md:text-5xl lg:text-6xl">clientes</span>
             </h2>
+            <div className="flex items-center justify-center gap-3 mb-3">
+              <div className="flex gap-1">
+                {[...Array(5)].map((_, i) => (
+                  <Star key={i} size={24} className="text-neon fill-neon" />
+                ))}
+              </div>
+              <span className="font-body text-lg md:text-xl text-white font-semibold">
+                5.0 • Más de 165 opiniones
+              </span>
+            </div>
             <p className="font-body text-base md:text-lg text-white">
               Reseñas reales de clientes satisfechos
             </p>
@@ -470,6 +503,18 @@ export const Home = () => {
           {/* Indicador de scroll */}
           <div className="text-center mt-8 text-white/60 text-sm">
             ← Desliza para ver más reseñas →
+          </div>
+
+          {/* Botón ver más reseñas */}
+          <div className="text-center mt-8">
+            <a
+              href="https://share.google/oJWguMHm7aaqkedvi"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-block bg-neon/20 border-2 border-neon text-neon font-body font-semibold px-8 py-3 rounded-lg hover:bg-neon hover:text-white transition-all duration-300 shadow-lg hover:shadow-neon"
+            >
+              Ver más reseñas en Google
+            </a>
           </div>
         </div>
       </Section>

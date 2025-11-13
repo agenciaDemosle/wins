@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { MapPin, Phone, Instagram, Facebook } from 'lucide-react';
+import { MapPin, Phone, Instagram, Facebook, Clock } from 'lucide-react';
 import { Music2 } from 'lucide-react';
 import logoImg from '@/assets/logo2.jpeg';
 
@@ -11,14 +11,16 @@ export const Footer = () => {
           {/* Columna 1: Logo + Redes Sociales */}
           <div>
             {/* Logo */}
-            <div className="mb-4">
-              <img src={logoImg} alt="Wings Barber Studio" className="h-24 w-24 object-contain rounded-lg" />
+            <div className="mb-0 -mt-6 md:mt-0">
+              <img src={logoImg} alt="Wings Barber Studio" className="h-28 w-auto object-contain rounded-lg" />
             </div>
-            <p className="text-sm leading-relaxed mb-4">
-              Barbería moderna en Puerto Varas. Tu estilo comienza aquí… y se eleva contigo.
+            <p className="text-sm leading-relaxed mb-0 mt-2">
+              La barbería número 1 de Puerto Varas.
+              <br />
+              Tu estilo comienza aquí… y se eleva contigo.
             </p>
             {/* Redes Sociales */}
-            <div className="flex items-center gap-4 mb-4">
+            <div className="flex items-center gap-4 mb-1 mt-3">
               <a
                 href="https://instagram.com/wingsbarberstudio"
                 target="_blank"
@@ -47,10 +49,11 @@ export const Footer = () => {
                 <Music2 size={28} />
               </a>
             </div>
-            <p className="text-xs text-white mb-2">
+            {/* Copyright en desktop solamente */}
+            <p className="hidden md:block text-xs text-white mb-0 mt-3">
               &copy; {new Date().getFullYear()} Wings Barber Studio. Todos los derechos reservados.
             </p>
-            <p className="text-xs text-white/60">
+            <p className="hidden md:block text-xs text-white/60">
               Creado por{' '}
               <a
                 href="https://demosle.cl"
@@ -83,18 +86,8 @@ export const Footer = () => {
                 </Link>
               </li>
               <li>
-                <Link to="/#equipo" className="hover:text-neon transition-colors">
-                  Nuestro Equipo
-                </Link>
-              </li>
-              <li>
-                <Link to="/#resenas" className="hover:text-neon transition-colors">
-                  Reseñas
-                </Link>
-              </li>
-              <li>
-                <Link to="/#contacto" className="hover:text-neon transition-colors">
-                  Contacto
+                <Link to="/alianzas" className="hover:text-neon transition-colors">
+                  Alianzas
                 </Link>
               </li>
               <li>
@@ -120,11 +113,29 @@ export const Footer = () => {
                 </a>
               </li>
               <li className="flex items-start space-x-3">
-                <Phone className="w-5 h-5 mt-0.5 flex-shrink-0 text-neon" />
+                <Clock className="w-5 h-5 mt-0.5 flex-shrink-0 text-neon" />
                 <span>Lunes a sábado de 11:00 a 20:00</span>
               </li>
             </ul>
           </div>
+        </div>
+
+        {/* Copyright en mobile después de todo */}
+        <div className="md:hidden mt-8 text-center">
+          <p className="text-xs text-white mb-1">
+            &copy; {new Date().getFullYear()} Wings Barber Studio. Todos los derechos reservados.
+          </p>
+          <p className="text-xs text-white/60">
+            Creado por{' '}
+            <a
+              href="https://demosle.cl"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-neon hover:text-neon/80 transition-colors"
+            >
+              Demosle.cl
+            </a>
+          </p>
         </div>
       </div>
     </footer>

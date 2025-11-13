@@ -3,6 +3,7 @@ import { Layout } from './routes/_layout';
 import { Home } from './routes/Home';
 import { QuienesSomos } from './routes/QuienesSomos';
 import { Servicios } from './routes/Servicios';
+import { Alianzas } from './routes/Alianzas';
 import { PoliticaPrivacidad } from './routes/PoliticaPrivacidad';
 import { NotFound } from './routes/NotFound';
 
@@ -14,6 +15,7 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/quienes-somos" element={<QuienesSomos />} />
           <Route path="/servicios" element={<Servicios />} />
+          <Route path="/alianzas" element={<Alianzas />} />
           <Route path="/politica-privacidad" element={<PoliticaPrivacidad />} />
           <Route path="*" element={<NotFound />} />
         </Route>

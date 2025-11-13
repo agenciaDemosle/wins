@@ -12,9 +12,7 @@ const navLinks = [
   { to: '/', label: 'Inicio', icon: Home, type: 'link' },
   { to: '/servicios', label: 'Servicios', icon: Scissors, type: 'link' },
   { to: '/quienes-somos', label: 'Quiénes Somos', icon: Users, type: 'link' },
-  { to: '/#equipo', label: 'Nuestro Equipo', icon: Users, type: 'link' },
-  { to: '/#resenas', label: 'Reseñas', icon: Star, type: 'link' },
-  { to: '/#contacto', label: 'Contacto', icon: Phone, type: 'link' },
+  { to: '/alianzas', label: 'Alianzas', icon: Users, type: 'link' },
 ];
 
 export const Header = () => {
@@ -53,7 +51,7 @@ export const Header = () => {
         <div className="flex items-center justify-between h-24 md:h-32">
           {/* Logo */}
           <Link to="/" className="flex items-center" onClick={closeMobileMenu}>
-            <img src={logoImg} alt="Wings Barber Studio" className="h-20 w-20 md:h-28 md:w-28 object-contain rounded-lg hover:scale-105 transition-transform duration-300 shadow-lg" />
+            <img src={logoImg} alt="Wings Barber Studio" className="h-40 w-40 md:h-56 md:w-56 object-contain rounded-lg hover:scale-105 transition-transform duration-300 shadow-lg" />
           </Link>
 
           {/* Desktop Nav */}
@@ -127,15 +125,13 @@ export const Header = () => {
               <div className="relative p-6 border-b-2 border-neon/40 bg-black/60 backdrop-blur-sm">
                 <div className="flex items-center justify-between mb-4">
                   <div className="flex flex-col items-center flex-1">
-                    <div className="relative mb-3">
-                      <img
-                        src={logoImg}
-                        alt="Wings Barber Studio"
-                        className="relative h-24 w-24 object-contain rounded-xl"
-                      />
-                    </div>
-                    <p className="text-neon/90 text-xs uppercase tracking-wide font-semibold text-center">
-                      La barbería #1 en Puerto Varas
+                    <img
+                      src={logoImg}
+                      alt="Wings Barber Studio"
+                      className="h-48 w-48 object-contain rounded-xl"
+                    />
+                    <p className="text-neon/90 text-xs uppercase tracking-wide font-semibold text-center -mt-14">
+                      La barbería #1 de Puerto Varas
                     </p>
                   </div>
                   <button
