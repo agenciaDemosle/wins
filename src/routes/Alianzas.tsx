@@ -5,18 +5,27 @@ import { getSEOData } from '@/lib/seo';
 import { motion } from 'framer-motion';
 import { Handshake, Users, Heart, Trophy, Briefcase } from 'lucide-react';
 import portada2Bg from '@/assets/portada2.webp';
+import fotoalianzaBg from '/images/fotoalianza.jpeg';
+import alianza1 from '/images/alianza1.jpeg';
+import alianza2 from '/images/alianza2.jpeg';
+import alianza3 from '/images/alianza3.jpeg';
+import alianza4 from '/images/alianza4.jpeg';
+import alianza5 from '/images/alianza5.jpeg';
+import alianza6 from '/images/alianza6.jpeg';
 import fondo1 from '@/assets/fondo.jpg';
 import fondo2 from '@/assets/fondo2.jpg';
 import fondo3 from '@/assets/fondo3.jpg';
 
 export const Alianzas = () => {
-  // Array de logos placeholder (puedes reemplazarlos con logos reales)
-  const logos = Array.from({ length: 20 }, (_, i) => ({
-    id: i + 1,
-    name: `Partner ${i + 1}`,
-    // Placeholder de logo - reemplazar con rutas reales de imágenes
-    image: `https://via.placeholder.com/150x80/00FFFF/000000?text=Logo+${i + 1}`
-  }));
+  // Array de logos de alianzas
+  const logos = [
+    { id: 1, name: 'Alianza 1', image: alianza1 },
+    { id: 2, name: 'Alianza 2', image: alianza2 },
+    { id: 3, name: 'Alianza 3', image: alianza3 },
+    { id: 4, name: 'Alianza 4', image: alianza4 },
+    { id: 5, name: 'Alianza 5', image: alianza5 },
+    { id: 6, name: 'Alianza 6', image: alianza6 }
+  ];
 
   return (
     <>
@@ -31,9 +40,9 @@ export const Alianzas = () => {
       />
       <Hero
         title="Alianzas"
-        backgroundImage={portada2Bg}
+        backgroundImage={fotoalianzaBg}
         overlayOpacity="medium"
-        backgroundPosition="center 35%"
+        backgroundPosition="center 70%"
         size="small"
       />
 
@@ -161,22 +170,26 @@ export const Alianzas = () => {
               {logos.map((logo) => (
                 <div
                   key={`logo-1-${logo.id}`}
-                  className="flex-shrink-0 w-[200px] h-[120px] mx-4 bg-white/10 backdrop-blur-sm border border-neon/30 rounded-lg p-4 flex items-center justify-center hover:border-neon/60 transition-all"
+                  className="flex-shrink-0 w-[200px] h-[120px] mx-4 flex items-center justify-center"
                 >
-                  <div className="text-neon font-heading text-sm text-center">
-                    {logo.name}
-                  </div>
+                  <img
+                    src={logo.image}
+                    alt={logo.name}
+                    className="w-full h-full object-contain hover:scale-110 transition-transform duration-300"
+                  />
                 </div>
               ))}
               {/* Segunda copia para loop infinito */}
               {logos.map((logo) => (
                 <div
                   key={`logo-2-${logo.id}`}
-                  className="flex-shrink-0 w-[200px] h-[120px] mx-4 bg-white/10 backdrop-blur-sm border border-neon/30 rounded-lg p-4 flex items-center justify-center hover:border-neon/60 transition-all"
+                  className="flex-shrink-0 w-[200px] h-[120px] mx-4 flex items-center justify-center"
                 >
-                  <div className="text-neon font-heading text-sm text-center">
-                    {logo.name}
-                  </div>
+                  <img
+                    src={logo.image}
+                    alt={logo.name}
+                    className="w-full h-full object-contain hover:scale-110 transition-transform duration-300"
+                  />
                 </div>
               ))}
             </div>

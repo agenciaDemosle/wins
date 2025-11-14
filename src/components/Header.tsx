@@ -131,7 +131,7 @@ export const Header = () => {
                       className="h-48 w-48 object-contain rounded-xl"
                     />
                     <p className="text-neon/90 text-xs uppercase tracking-wide font-semibold text-center -mt-14">
-                      La barbería #1 de Puerto Varas
+                      La barbería Nº 1 de Puerto Varas
                     </p>
                   </div>
                   <button

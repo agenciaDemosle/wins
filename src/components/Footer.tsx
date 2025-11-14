@@ -15,7 +15,7 @@ export const Footer = () => {
               <img src={logoImg} alt="Wings Barber Studio" className="h-28 w-auto object-contain rounded-lg" />
             </div>
             <p className="text-sm leading-relaxed mb-0 mt-2">
-              La barbería número 1 de Puerto Varas.
+              La barbería Nº 1 de Puerto Varas.
               <br />
               Tu estilo comienza aquí… y se eleva contigo.
             </p>

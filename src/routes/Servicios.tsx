@@ -17,6 +17,7 @@ import revitalizacionImg from '@/assets/revitalizacion.jpeg';
 import rizosImg from '@/assets/rizos.jpeg';
 import visosImg from '@/assets/vizos.jpeg';
 import fondoImg from '@/assets/fondo.jpg';
+import serviciosHeroImg from '/images/servicios.jpg';
 
 const services = [
   {
@@ -84,6 +85,9 @@ export const Servicios = () => {
       <Hero
         title="Servicios Wings Barber Studio"
         subtitle="Soluciones completas para tu estilo: cabello, barba, piel y más."
+        backgroundImage={serviciosHeroImg}
+        overlayOpacity="medium"
+        backgroundPosition="center"
         size="small"
       />
 
@@ -102,7 +106,7 @@ export const Servicios = () => {
             ¿Listo para tu transformación en <span className="font-script text-neon text-4xl md:text-5xl lg:text-6xl">Wings</span>?
           </h2>
           <p className="font-body text-base md:text-lg text-white mb-8">
-            Agenda tu cita ahora y descubre por qué somos la barbería #1 en Puerto Varas.
+            Agenda tu cita ahora y descubre por qué somos la barbería Nº 1 en Puerto Varas.
           </p>
           <div className="flex justify-center">
             <a

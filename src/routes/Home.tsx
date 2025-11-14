@@ -287,22 +287,58 @@ export const Home = () => {
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
               {/* Módulo izquierdo: Servicios */}
               <div className="bg-gray-light/30 backdrop-blur-sm border-2 border-neon/40 p-6 md:p-8 rounded-lg">
-                <div className="space-y-5 mb-6">
-                  <div className="flex items-start gap-4">
-                    <Coffee className="text-neon flex-shrink-0" size={28} />
-                    <p className="font-body text-sm md:text-base text-white pt-1">Café o té de cortesía al llegar</p>
+                <div className="space-y-4 mb-6">
+                  <div className="flex items-start gap-3">
+                    <span className="text-neon flex-shrink-0 text-xl">•</span>
+                    <p className="font-body text-sm md:text-base text-white">Asesoría de estilo personalizada para tu look</p>
                   </div>
-                  <div className="flex items-start gap-4">
-                    <Gamepad2 className="text-neon flex-shrink-0" size={28} />
-                    <p className="font-body text-sm md:text-base text-white pt-1">Sala de juegos con PS5</p>
+                  <div className="flex items-start gap-3">
+                    <span className="text-neon flex-shrink-0 text-xl">•</span>
+                    <p className="font-body text-sm md:text-base text-white">Perfume final para cerrar con broche de oro</p>
                   </div>
-                  <div className="flex items-start gap-4">
-                    <Sparkles className="text-neon flex-shrink-0" size={28} />
-                    <p className="font-body text-sm md:text-base text-white pt-1">Fragancias exclusivas para finalizar</p>
+                  <div className="flex items-start gap-3">
+                    <span className="text-neon flex-shrink-0 text-xl">•</span>
+                    <p className="font-body text-sm md:text-base text-white">Ambiente relajante con música seleccionada</p>
                   </div>
-                  <div className="flex items-start gap-4">
-                    <Scissors className="text-neon flex-shrink-0" size={28} />
-                    <p className="font-body text-sm md:text-base text-white pt-1">Productos profesionales <strong className="text-neon">Nishman</strong></p>
+                  <div className="flex items-start gap-3">
+                    <span className="text-neon flex-shrink-0 text-xl">•</span>
+                    <p className="font-body text-sm md:text-base text-white">Sillones ergonómicos ultra cómodos</p>
+                  </div>
+                  <div className="flex items-start gap-3">
+                    <span className="text-neon flex-shrink-0 text-xl">•</span>
+                    <p className="font-body text-sm md:text-base text-white">Atención puntual y dedicada solo a ti</p>
+                  </div>
+                  <div className="flex items-start gap-3">
+                    <span className="text-neon flex-shrink-0 text-xl">•</span>
+                    <p className="font-body text-sm md:text-base text-white">Espacio climatizado para tu comodidad</p>
+                  </div>
+                  <div className="flex items-start gap-3">
+                    <span className="text-neon flex-shrink-0 text-xl">•</span>
+                    <p className="font-body text-sm md:text-base text-white">Detalles premium en cada estación de trabajo</p>
+                  </div>
+                  <div className="flex items-start gap-3">
+                    <span className="text-neon flex-shrink-0 text-xl">•</span>
+                    <p className="font-body text-sm md:text-base text-white">Estación de autoservicio: café, té y agua</p>
+                  </div>
+                  <div className="flex items-start gap-3">
+                    <span className="text-neon flex-shrink-0 text-xl">•</span>
+                    <p className="font-body text-sm md:text-base text-white">Experiencia completa en un solo lugar: cabello, barba, piel y estilo</p>
+                  </div>
+                  <div className="flex items-start gap-3">
+                    <span className="text-neon flex-shrink-0 text-xl">•</span>
+                    <p className="font-body text-sm md:text-base text-white">Corte diseñado según tu tipo de rostro y estilo de vida</p>
+                  </div>
+                  <div className="flex items-start gap-3">
+                    <span className="text-neon flex-shrink-0 text-xl">•</span>
+                    <p className="font-body text-sm md:text-base text-white">Peinados y productos aplicados para que salgas listo</p>
+                  </div>
+                  <div className="flex items-start gap-3">
+                    <span className="text-neon flex-shrink-0 text-xl">•</span>
+                    <p className="font-body text-sm md:text-base text-white">Consejos para cuidar tu estilo en casa</p>
+                  </div>
+                  <div className="flex items-start gap-3">
+                    <span className="text-neon flex-shrink-0 text-xl">•</span>
+                    <p className="font-body text-sm md:text-base text-white">Ambiente limpio y desinfectado en cada rotación</p>
                   </div>
                 </div>
                 <div className="border-t border-neon/30 pt-5">
@@ -314,11 +350,11 @@ export const Home = () => {
 
               {/* Módulo derecho: Servicio gratis */}
               <div className="bg-gray-light/30 backdrop-blur-sm border-2 border-neon/40 p-6 md:p-8 rounded-lg flex flex-col">
-                <div className="mb-5 overflow-hidden rounded-lg border-2 border-neon/50 flex-shrink-0 max-h-48">
+                <div className="mb-5 overflow-hidden rounded-lg border-2 border-neon/50 flex-shrink-0">
                   <img
                     src={gratisImg}
                     alt="Servicio Gratis"
-                    className="w-full h-full object-cover object-center"
+                    className="w-full h-auto object-cover object-center"
                   />
                 </div>
                 <div className="flex-1 flex flex-col justify-center">
